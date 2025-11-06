@@ -1,11 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>IVSS Laboratory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <h1>Hello world</h1>
+    <div id="navbar-placeholder"></div>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="hero-subtitle">Welcome to IVSS Laboratory</p>
+            <h1>Laboratorium Visi Cerdas dan Sistem Cerdas</h1>
+            <p>Penelitian di laboratorium ini mengintegrasikan computer vision, AI, dan IoT untuk menciptakan solusi inovatif yang mampu mengenali, menganalisis, serta merespon lingkungan secara mandiri.</p>
+        </div>
+    </section>
+
+    <section class="profile-section" id="profil">
+        <div class="profile-content">
+            <p class="profile-label">PROFIL</p>
+            <h2>Tentang IVSS Laboratory</h2>
+            <p>Laboratorium Visi Cerdas dan Sistem Cerdas merupakan pusat riset dan pengembangan di bawah Jurusan Teknologi Informasi Politeknik Negeri Malang yang berfokus pada bidang intelligent vision, dan smart system. Laboratorium ini menjadi wadah bagi dosen dan mahasiswa untuk melakukan penelitian, pembelajaran, serta pelatihan dalam pengembangan sistem cerdas berbasis pengolahan citra dan kecerdasan buatan.</p>
+            <a href="aboutUs.html"><button class="btn-primary">about us</button></a>
+        </div>
+        <div class="profile-images">
+            <div class="stacked-image">
+                <img src="../assets/gambar/profil1.jpg" alt="Lab 1" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="stacked-image">
+                <img src="../assets/gambar/profil2.jpg" alt="Lab 2" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="stacked-image">
+                <img src="../assets/gambar/profil3.jpg" alt="Lab 3" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <section class="news-section" id="berita">
+        <p class="news-label">Aktivitas Laboratorium</p>
+        <h2>Kegiatan dan proyek</h2>
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-icon">🔬</div>
+                <h3>Penelitian Keamanan Siber</h3>
+                <p>Tim peneliti IVSS Laboratory berhasil mengembangkan metode baru untuk deteksi ancaman keamanan siber dengan tingkat akurasi tinggi.</p>
+            </div>
+            <div class="news-card">
+                <div class="news-icon">🛡️</div>
+                <h3>Sistem Verifikasi Terbaru</h3>
+                <p>Implementasi sistem verifikasi otomatis untuk meningkatkan keamanan dan efisiensi proses validasi data sensitif.</p>
+            </div>
+            <div class="news-card">
+                <div class="news-icon">💡</div>
+                <h3>Workshop Keamanan Sistem</h3>
+                <p>IVSS Laboratory mengadakan workshop tentang keamanan sistem informasi untuk mahasiswa dan praktisi industri.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="slider-section">
+        <div class="slider-container">
+            <div class="slider-wrapper" id="imageSlider">
+                <div class="slider-item">
+                    <img src="../assets/gambar/galeri1.jpg" alt="Slide 1">
+                </div>
+                <div class="slider-item">
+                    <img src="../assets/gambar/profil1.jpg" alt="Slide 2">
+                </div>
+                <div class="slider-item">
+                    <img src="../assets/gambar/profil2.jpg" alt="Slide 3">
+                </div>
+                <div class="slider-item">
+                    <img src="../assets/gambar/profil3.jpg" alt="Slide 4">
+                </div>
+                <div class="slider-item">
+                    <img src="../assets/gambar/cam.jpg" alt="Slide 5">
+                </div>
+                <div class="slider-item">
+                    <img src="../assets/gambar/comp.jpg" alt="Slide 6">
+                </div>
+                <div class="slider-item">
+                    <img src="../assets/gambar/rs.jpg" alt="Slide 7">
+                </div>
+                <div class="slider-item">
+                    <img src="../assets/gambar/light.jpg" alt="Slide 8">
+                </div>
+                <div class="slider-item">
+                    <img src="../assets/gambar/meet.jpg" alt="Slide 9">
+                </div>
+                <div class="slider-item">
+                    <img src="../assets/gambar/rak.jpg" alt="Slide 10">
+                </div>
+            </div>
+            <div class="slider-nav">
+                <button class="slider-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="slider-counter" id="sliderCounter"></div>
+        </div>
+    </section>
+
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>
