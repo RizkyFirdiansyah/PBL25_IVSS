@@ -1391,3 +1391,1751 @@ body {
         padding: 40px;
     }
 }
+
+/* ===       FILE: about-us.css          === */
+.page-banner {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+    url(/assets/gambar/gedungJTI.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 65px;
+  padding: 120px 50px 80px;
+  text-align: center;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-us-banner .banner-title {
+  color: #fff;
+  font-size: 56px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.about-us-banner .banner-description {
+  color: #ccc;
+  max-width: 50%;
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* =========================================== */
+/* ===      2. Bagian Sejarah (2 Kolom)    === */
+/* =========================================== */
+.section-sejarah-about {
+  padding: 80px 50px;
+  background-color: #fff;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.content-row {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+.image-placeholder {
+  background-color: #ccc;
+}
+.large-placeholder {
+  flex: 0.75;
+  min-height: 60vh;
+}
+.text-content {
+  flex: 1;
+}
+.section-label {
+  font-size: 0.8em;
+  color: #999;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.section-sejarah-about .text-content h2 {
+  margin-bottom: 25px;
+  font-size: 2em;
+  line-height: 1.2;
+}
+.section-sejarah-about .text-content p {
+  margin-bottom: 20px;
+}
+
+/* ===  3. STYLING VISI & MISI (Testimonial) === */
+.section-visi-misi.vm-testimonial-style {
+  padding: 80px 50px;
+  background-color: #f8f8f8;
+}
+.section-label.text-center {
+  text-align: center;
+  color: #a098bf;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.section-title.text-center {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  color: #132145;
+}
+.vm-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.vm-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.vm-card .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.vm-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #e0ffe0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2em;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+.vm-info {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.vm-info h3 {
+  margin: 0;
+  font-size: 1.6em;
+  color: #333;
+  font-weight: 700;
+}
+.vm-card .accordion-header {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #555;
+  padding: 5px;
+  margin-left: 10px;
+}
+.vm-card .accordion-header i {
+  transition: transform 0.3s ease;
+}
+.vm-card .accordion-header.active i {
+  transform: rotate(180deg);
+}
+.vm-card .accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #555;
+  line-height: 1.7;
+}
+.vm-card .accordion-header.active + .accordion-body {
+  padding-top: 10px;
+}
+.vm-card .misi-list {
+  padding-left: 20px;
+  margin: 0;
+}
+.vm-card .misi-list li {
+  margin-bottom: 8px;
+}
+
+/* ===   4. Aktivitas Lab (News) (BARU)    === */
+.news-section {
+  padding: 80px 50px;
+  background-color: #fff;
+}
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+.news-card {
+  padding: 20px;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.news-card.highlight {
+  background-color: #3b5998;
+  color: #fff;
+  border-radius: 8px;
+  padding: 30px;
+}
+.news-card.highlight h3 {
+  color: #fff;
+}
+.news-card .news-icon {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #3b5998;
+}
+.news-card.highlight .news-icon {
+  color: #fff;
+}
+.news-card h3 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #fff;
+}
+.news-card p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #555;
+}
+.news-card.highlight p {
+  color: #eee;
+}
+
+/* ===       6. MEDIA QUERIES (RESPONSIVE) === */
+@media (max-width: 768px) {
+  .section-sejarah-about,
+  .section-visi-misi.vm-testimonial-style,
+  .news-section {
+    padding: 60px 20px;
+  }
+  .content-row {
+    flex-direction: column;
+  }
+  .large-placeholder {
+    min-height: 250px;
+    margin-bottom: 30px;
+  }
+  .vm-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+  .section-title.text-center {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+}
+
+/* =========================================== */
+/* ===       FILE: member.css            === */
+/* =========================================== */
+
+/* 1. Banner Header */
+/* Menggunakan gaya yang sama dengan about-us.css */
+.page-banner.member-banner {
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.47),
+      rgba(238, 238, 238, 0.525)
+    ),
+    url(/assets/gambar/gedungJTI.webp);
+  padding: 80px 50px;
+  margin-top: 65px;
+  text-align: left;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+.member-banner .banner-title {
+  color: #fff;
+  font-size: 3em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.member-banner .banner-description {
+  color: #ccc;
+  max-width: 50%;
+  font-size: 1em;
+}
+
+/* =========================================== */
+/* ===      2. Konten Halaman Anggota      === */
+/* =========================================== */
+.member-page-content {
+  background-color: #f9f9f9; /* Latar belakang abu-abu muda */
+  padding: 40px 0;
+}
+
+.member-section {
+  padding: 40px 50px;
+  background-color: #fff;
+  margin-bottom: 30px; /* Jarak antar sekat */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+/* Judul Sekat (DOSEN, PLP, etc.) */
+.section-subtitle {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  border-bottom: 3px solid #3b5998; /* Ganti dengan warna primer Anda */
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+/* Grid untuk kartu-kartu */
+.member-grid {
+  display: grid;
+  /* 3 kolom di desktop */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* =========================================== */
+/* ===         3. Kartu Anggota (Card)     === */
+/* =========================================== */
+.member-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.member-photo {
+  width: 100%;
+  height: 300px; 
+  background-color: #ccc; 
+}
+
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; 
+}
+
+
+.member-info {
+  padding: 25px 20px;
+}
+
+.member-name {
+  font-size: 1.4em;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #333;
+}
+.member-name a {
+  text-decoration: none; 
+  color: #333; 
+  transition: color 0.3s;
+}
+.member-name a:hover {
+  color: #3b5998; 
+}
+
+.member-title {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.member-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.member-socials a {
+  color: #555;
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+.member-socials a:hover {
+  color: #3b5998; 
+}
+
+/* =========================================== */
+/* ===    4. CTA Registrasi (Model Stacked)  === */
+/* =========================================== */
+
+/* BARU: Keyframes untuk animasi mengambang */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px); /* Gerak ke atas 15px */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.cta-section-stacked {
+  background-color: #fff;
+  padding: 80px 50px;
+  border-top: 1px solid #eee;
+  overflow: hidden;
+}
+
+.cta-stacked-grid {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Kolom Teks (Kiri) */
+.cta-text-content {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.cta-label {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.cta-title {
+  font-size: 2.8em;
+  font-weight: 800;
+  color: #222;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+.cta-description {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+.btn-cta {
+  display: inline-block;
+  background-color: #6c757d;
+  color: #fff;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  transition: background-color 0.3s;
+  align-items: center;
+}
+.btn-cta:hover {
+  background-color: #5a6268;
+}
+
+/* Kolom Gambar (Kanan) */
+.cta-stacked-images {
+  flex: 1;
+  position: relative;
+  min-height: 350px;
+  min-width: 300px;
+}
+.stacked-image-box {
+  position: absolute;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  height: 200px;
+
+  /* BARU: Menerapkan animasi */
+  animation-name: floatAnimation;
+  animation-duration: 6s; /* Durasi 6 detik */
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* =========================================== */
+/* ===   5. MEDIA QUERIES (RESPONSIVE)     === */
+/* =========================================== */
+@media (max-width: 768px) {
+  /* ... (style responsive member-grid, dll.) ... */
+
+  .cta-stacked-grid {
+    flex-direction: column;
+  }
+
+  .cta-text-content {
+    text-align: center;
+    order: 2; /* Teks akan pindah ke Bawah */
+  }
+
+  .cta-stacked-images {
+    order: 1; /* Gambar akan pindah ke Atas */
+    display: block; /* PASTIKAN TETAP TAMPIL */
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 40px;
+  }
+
+  .cta-title {
+    font-size: 2.2em;
+  }
+}
+/* =========================================== */
+/* ===       FILE: sarana-prasarana.css  === */
+/* =========================================== */
+
+/* 1. Banner Header */
+.page-banner.sarana-prasarana-banner {
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.47),
+      rgba(238, 238, 238, 0.525)
+    ),
+    url(../assets/gambar/gedungJTI.webp);
+  padding: 80px 50px;
+  margin-top: 65px;
+  text-align: left;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+.sarana-prasarana-banner .banner-title {
+  color: #fff;
+  font-size: 3em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.sarana-prasarana-banner .banner-description {
+  color: #ccc;
+  max-width: 50%;
+  font-size: 1em;
+}
+
+/* =========================================== */
+/* ===      2. Konten Sarana & Prasarana   === */
+/* =========================================== */
+.sarana-prasarana-content {
+  padding: 60px 0;
+  background-color: #f8f8f8; /* Latar belakang abu-abu muda */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+  gap: 30px; /* Jarak antar item */
+  padding: 0 50px; /* Padding di kiri-kanan container */
+}
+
+/* =========================================== */
+/* ===         3. Item Sarana (Card)       === */
+/* =========================================== */
+.grid-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.item-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #e0e0e0;
+  overflow: hidden;
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Pastikan gambar mengisi bingkai dan terpotong jika perlu */
+  display: block;
+}
+
+.item-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.item-title {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.item-description {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* =========================================== */
+/* ===       4. MEDIA QUERIES (RESPONSIVE) === */
+/* =========================================== */
+
+/* Tampilan Tablet */
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
+    padding: 0 30px;
+  }
+  .sarana-prasarana-banner .banner-description {
+    max-width: 70%;
+  }
+}
+/* Tampilan Mobile */
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* 1 kolom di mobile */
+    padding: 0 20px;
+  }
+  .page-banner.sarana-prasarana-banner {
+    padding: 60px 20px;
+    height: 30vh;
+  }
+  .sarana-prasarana-banner .banner-title {
+    font-size: 2.2em;
+  }
+  .sarana-prasarana-banner .banner-description {
+    max-width: 90%;
+    font-size: 0.9em;
+  }
+  .item-title {
+    font-size: 1.1em;
+  }
+}
+/* =========================================== */
+/* ===       FILE: sop-layanan.css       === */
+/* =========================================== */
+
+/* 1. Banner Header (Tidak tumpang tindih) */
+.page-banner.sop-layanan-banner {
+  background: #6a6a6a; /* Warna abu-abu solid dari referensi */
+  padding: 80px 50px;
+  margin-top: 65px;
+  text-align: left;
+  height: 35vh;
+  border-bottom: 1px solid #e0e0e0;
+}
+.sop-layanan-banner .banner-title {
+  color: #fff;
+  font-size: 3em;
+  margin-bottom: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.sop-layanan-banner .banner-description {
+  color: #eee;
+  max-width: 50%;
+  font-size: 1em;
+}
+
+/* =========================================== */
+/* ===      2. Konten Halaman SOP          === */
+/* =========================================== */
+.sop-layanan-content {
+  /* "outernya... abu" tipis" */
+  background-color: #f8f8f8;
+  padding: 60px 50px;
+}
+
+/* "Alas" Putih untuk SOP */
+.sop-container-box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  padding: 40px;
+  margin-bottom: 60px; /* Jarak ke form pendaftaran */
+  /* Menghapus margin-top negatif agar tidak naik ke header */
+}
+
+/* Bagian Atas (2 Kolom) */
+.sop-section-top {
+  display: grid;
+  grid-template-columns: 35% 1fr; /* 35% untuk gambar, sisa untuk teks */
+  gap: 40px;
+  margin-bottom: 40px; /* Jarak ke teks bawah */
+}
+
+.sop-visual {
+  background-color: #e0e0e0; /* Placeholder abu-abu */
+  width: 100%;
+  min-height: 250px;
+  border-radius: 5px;
+}
+.sop-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.sop-text-intro h2 {
+  font-size: 2em;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.sop-text-intro p {
+  font-size: 0.95em;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Bagian Bawah (Teks Penuh) */
+.sop-section-bottom p {
+  font-size: 1em;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* =========================================== */
+/* ===     3. Form Pendaftaran Member      === */
+/* (Styling ini sama seperti sebelumnya)     */
+/* =========================================== */
+.registration-form-section {
+  background-color: #fff;
+  padding: 60px 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+.form-label {
+  font-size: 0.8em;
+  color: #999;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.form-title {
+  font-size: 2.2em;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #555;
+}
+.form-group input[type="text"],
+.form-group input[type="email"] {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 1em;
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus {
+  outline: none;
+  border-color: #3b5998;
+  box-shadow: 0 0 5px rgba(59, 89, 152, 0.3);
+}
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 0;
+}
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.checkbox-group label {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+.btn-submit {
+  background-color: #333;
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.btn-submit:hover {
+  background-color: #000;
+}
+
+/* =========================================== */
+/* ===       4. MEDIA QUERIES (RESPONSIVE) === */
+/* =========================================== */
+@media (max-width: 992px) {
+  .sop-layanan-content {
+    padding: 40px 30px;
+  }
+  .sop-section-top {
+    grid-template-columns: 1fr; /* Tumpuk SOP */
+  }
+  .sop-visual {
+    height: 300px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr; /* Tumpuk Form */
+  }
+  .registration-form-section {
+    padding: 40px 30px;
+  }
+}
+@media (max-width: 600px) {
+  .sop-layanan-content {
+    padding: 30px 20px;
+  }
+  .sop-container-box,
+  .registration-form-section {
+    padding: 30px 20px;
+  }
+  .form-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-submit {
+    width: 100%;
+  }
+  .page-banner.sop-layanan-banner {
+    padding: 60px 20px;
+    height: 30vh;
+  }
+  .sop-text-intro h2 {
+    font-size: 1.6em;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Arial", sans-serif;
+    color: #333;
+    max-width: 1444px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: linear-gradient(to right, #031676, #5770ec);
+    position: fixed;
+    top: 0;
+    max-width: 1444px;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: "Arial", sans-serif;
+    color: #ffffff;
+  }
+
+  .logo h1 {
+    font-size: 22px;
+    margin: 0;
+  }
+
+  .logo img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: opacity 0.3s;
+    padding: 10px 15px;
+  }
+
+  .nav-menu li a:hover {
+    opacity: 0.7;
+  }
+
+  .nav-menu .dropdown {
+    position: relative;
+  }
+
+  .nav-menu .dropdown-icon {
+    margin-left: 5px;
+    font-size: 10px;
+    transition: transform 0.3s;
+  }
+
+  .nav-menu .dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000a64b9;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    list-style: none;
+    padding: 10px 0;
+    margin-top: 10px;
+  }
+
+  .dropdown-menu li {
+    width: 100%;
+  }
+
+  .dropdown-menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .dropdown-menu li a:hover {
+    background-color: #030f7e8e;
+    opacity: 1;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+  }
+
+  .hero {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.47),
+        rgba(238, 238, 238, 0.525)
+      ),
+      url(/assets/gambar/gedungJTI.webp);
+    background-repeat: no-repeat;
+    margin-top: 65px;
+    padding: 100px 50px;
+    text-align: left;
+    height: 100vh;
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .hero-subtitle {
+    color: #e0e0e0;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+
+  .btn-primary {
+    background-color: #000a64b9;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+  }
+
+  .btn-primary:hover {
+    background-color: #000a64de;
+  }
+
+  .profile-section {
+    padding: 80px 50px;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+  }
+
+  .profile-content {
+    flex: 1;
+  }
+
+  .profile-label {
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  .profile-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .profile-content p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+
+  .btn-secondary {
+    background-color: #000a64b9;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+  }
+
+  .btn-secondary:hover {
+    background-color: #000a64d6;
+  }
+
+  .profile-images {
+    flex: 1;
+    position: relative;
+    height: 550px;
+  }
+
+  .stacked-image {
+    position: absolute;
+    width: 350px;
+    height: 250px;
+    background-color: #c0c0c0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .stacked-image:nth-child(1) {
+    top: 0;
+    right: 100px;
+    z-index: 1;
+    background-image: url("images/profile/profile1.jpg");
+  }
+
+  .stacked-image:nth-child(2) {
+    top: 150px;
+    right: 200px;
+    z-index: 2;
+    background-image: url("images/profile/profile2.jpg");
+  }
+
+  .stacked-image:nth-child(3) {
+    top: 300px;
+    right: 0;
+    z-index: 3;
+    background-image: url("images/profile/profile3.jpg");
+  }
+
+  .stacked-image:hover {
+    transform: translateY(-20px) scale(1.05);
+    z-index: 10 !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .news-section {
+    padding: 80px 50px;
+    background-color: white;
+  }
+
+  .news-label {
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  .news-section h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .news-card {
+    background-color: white;
+    overflow: hidden;
+    transition: transform 0.3s;
+    padding: 30px;
+  }
+
+  .news-card:nth-child(2) {
+    background-color: #000a64b9;
+    color: white;
+  }
+
+  .news-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .news-icon {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .news-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .news-card p {
+    color: #666666;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  .news-card:nth-child(2) p {
+    color: #e0e0e0;
+  }
+
+  .slider-section {
+    padding: 0 50px 80px;
+    background-color: white;
+    position: relative;
+  }
+
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slider-wrapper {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+  }
+
+  .slider-wrapper::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .slider-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .slider-wrapper::-webkit-scrollbar-thumb {
+    background: #000a64b9;
+    border-radius: 4px;
+  }
+
+  .slider-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #000a64b9;
+  }
+
+  .slider-item {
+    min-width: 250px;
+    height: 180px;
+    background-color: #000a64b9;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .slider-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .slider-btn {
+    background-color: #000a64b9;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slider-btn:hover {
+    background-color: #030d67df;
+    transform: scale(1.1);
+  }
+
+  .slider-btn:active {
+    transform: scale(0.95);
+  }
+
+  .slider-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .slider-counter {
+    text-align: center;
+    margin-top: 20px;
+    color: #888;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .footer {
+    background: linear-gradient(to right, #031676, #5770ec);
+    color: white;
+    padding: 60px 50px 30px;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    margin-bottom: 50px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .footer-section p {
+    color: #ffffff;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+
+  .social-icons a {
+    color: #ffffff;
+    font-size: 20px;
+    transition: color 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: white;
+  }
+
+  .footer-nav {
+    list-style: none;
+  }
+
+  .footer-nav li {
+    margin-bottom: 12px;
+  }
+
+  .footer-nav li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-nav li a:hover {
+    color: white;
+  }
+
+  .footer-nav li a::before {
+    content: "›";
+    font-size: 18px;
+  }
+
+  .contact-info {
+    list-style: none;
+  }
+
+  .contact-info li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    color: #fff;
+  }
+
+  .contact-info li i {
+    margin-top: 3px;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .newsletter-form input {
+    padding: 15px;
+    background-color: #ffffff;
+    border: none;
+    color: rgb(0, 0, 0);
+  }
+
+  .newsletter-form input::placeholder {
+    color: #ffffff;
+  }
+
+  .newsletter-form button {
+    padding: 15px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+  }
+
+  .newsletter-form button:hover {
+    background-color: #092886;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #ffffff;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-bottom p {
+    color: #ffffff;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 30px;
+  }
+
+  .footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover {
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .nav-menu {
+      position: fixed;
+      left: -100%;
+      top: 70px;
+      flex-direction: column;
+      background-color: #8a8a8a;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+      padding: 20px 0;
+    }
+
+    .nav-menu.active {
+      left: 0;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Dropdown mobile */
+    .dropdown-menu {
+      position: static;
+      display: none;
+      background-color: #7a7a7a;
+      box-shadow: none;
+      margin-top: 0;
+      padding: 0;
+    }
+
+    .dropdown.active .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu li a {
+      padding: 10px 20px;
+      font-size: 12px;
+    }
+
+    .profile-section {
+      flex-direction: column;
+    }
+
+    .profile-images {
+      width: 100%;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .navbar {
+      padding: 20px 30px;
+    }
+
+    .hero,
+    .profile-section,
+    .news-section,
+    .slider-section,
+    .cta-section {
+      padding: 60px 30px;
+    }
+
+    .slider-item {
+      min-width: 200px;
+      height: 150px;
+    }
+
+    .slider-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+  }
+/* =========================================== */
+/* ===       FILE: register.css          === */
+/* =========================================== */
+
+.register-page-content {
+  background-color: #f8f8f8; 
+  padding: calc(65px + 60px) 50px 60px 50px; 
+  min-height: 100vh;
+    box-sizing: border-box; 
+}
+
+.registration-form-section {
+  width: 100%;
+  max-width: 700px; 
+  background-color: #fff;
+  padding: 60px 50px;
+  border-radius: 12px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      
+   
+    margin: 0 auto; 
+}
+.form-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-label {
+    font-size: 0.8em;
+    color: #999;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.form-title {
+    font-size: 2.2em;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* 3. Styling Form (Input Full-width) */
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* INPUT INTERAKTIF */
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f8; 
+    font-size: 1em;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder {
+    color: #aaa;
+}
+
+/* EFEK FOKUS (INTERAKTIF) */
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus {
+    outline: none;
+    border-color: #0056b3; 
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+}
+
+/* 4. Footer Form */
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 0;
+}
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+/* TOMBOL INTERAKTIF */
+.btn-submit {
+    background-color: #333; 
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-submit:hover {
+    background-color: #000;
+}
+
+/* 5. Media Queries (Responsif) */
+@media (max-width: 992px) {
+    .register-page-content {
+        padding: calc(80px + 40px) 30px 40px 30px; 
+    }
+    .registration-form-section {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .register-page-content {
+        padding: calc(80px + 30px) 20px 30px 20px; 
+        min-height: auto;
+    }
+    .registration-form-section {
+        padding: 30px 20px;
+        border-radius: 0; 
+        box-shadow: none; 
+    }
+    .form-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .btn-submit {
+        width: 100%; 
+    }
+    .form-title {
+        font-size: 1.8em;
+    }
+}}
+
