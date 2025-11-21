@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - IVSS Laboratory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        /* Hero Section */
+        .contact-hero {
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/assets/gambar/gedungJTI.webp') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 65px; 
+            box-sizing: border-box;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .contact-content h1 {
+            font-size: 68px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .contact-form-box {
+            background: rgba(255,255,255,0.12);
+            padding: 30px 40px;
+            width: 420px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-form label {
+            color: #eaeaea;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-align: left;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+        .contact-form textarea {
+            resize: vertical; /* Membatasi resize hanya pada sumbu vertikal */
+        }
+
+        .contact-form button {
+            align-self: center;
+            margin-top: 10px;
+            padding: 10px 30px;
+            background-color: rgb(22, 44, 158);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-form-box {
+                width: 90%;
+                padding: 25px;
+            }
+
+            .contact-content h1 {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <!-- HERO / CONTACT SECTION -->
+    <section class="contact-hero reveal">
+        <div class="contact-content">
+            <h1>KONTAK</h1>
+            <div class="contact-form-box">
+                <form id="contactForm" action="#" method="post" class="contact-form">
+                    <label>NAMA</label>
+                    <input type="text" name="name" placeholder="Masukan Nama" required>
+                    
+                    <label>EMAIL</label>
+                    <input type="email" name="email" placeholder="Masukan Email" required>
+
+                    <label for="kritik-saran">KRITIK DAN SARAN</label>
+                    <textarea id="kritik-saran" name="kritik-saran" placeholder="Masukkan Kritik dan Saran" required></textarea>
+
+                    <button type="submit" class="btn-primary">KIRIM</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

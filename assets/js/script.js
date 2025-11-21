@@ -65,6 +65,7 @@ function setActiveMenu() {
     });
 }
 
+// ada tambahan untuk slider 
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -87,6 +88,7 @@ function initializeSlider() {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const counter = document.getElementById('sliderCounter');
+    const galleryBtn = document.getElementById('sliderGalleryBtn');
     
     if (!slider || !prevBtn || !nextBtn) return;
     
@@ -96,8 +98,17 @@ function initializeSlider() {
     function updateCounter() {
         const maxScroll = slider.scrollWidth - slider.clientWidth;
         const scrollPercentage = Math.round((slider.scrollLeft / maxScroll) * 100);
+        
         if (counter) {
             counter.textContent = `Scroll: ${scrollPercentage}%`;
+        }
+        
+        if (galleryBtn) {
+            if (scrollPercentage >= 80) {
+                galleryBtn.classList.add('show');
+            } else {
+                galleryBtn.classList.remove('show');
+            }
         }
         
         prevBtn.disabled = slider.scrollLeft <= 0;
@@ -150,8 +161,6 @@ function reveal() {
 }
 
 reveal();
-
-// ===== TAMBAHAN JAVASCRIPT UNTUK HALAMAN BERITA =====
 
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
@@ -376,3 +385,169 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+// tambahan js untuk gallery 
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+    const galleryGrid = document.getElementById('galleryGrid');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const loadMoreContainer = document.getElementById('loadMoreContainer');
+    
+    let currentIndex = 0;
+    let allImages = [];
+    
+    // tambahkan foto-foto lainnya di sini
+    const additionalImages = [
+        { src: '../assets/gambar/rs.jpg', alt: 'Research Space' },
+    ];
+    
+    let imagesLoaded = false;
+    
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            if (!imagesLoaded && additionalImages.length > 0) {
+                loadMoreImages();
+                imagesLoaded = true;
+                
+                loadMoreBtn.querySelector('.btn-text').textContent = 'Semua Foto Dimuat';
+                loadMoreBtn.querySelector('i').className = 'fas fa-check';
+                loadMoreBtn.disabled = true;
+                
+                setTimeout(() => {
+                    loadMoreContainer.classList.add('hidden');
+                }, 2000);
+            } else if (additionalImages.length === 0) {
+                loadMoreContainer.classList.add('hidden');
+            }
+        });
+    }
+    
+    if (additionalImages.length === 0 && loadMoreContainer) {
+        loadMoreContainer.classList.add('hidden');
+    }
+    
+    function loadMoreImages() {
+        additionalImages.forEach((imageData, index) => {
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
+            galleryItem.style.opacity = '0';
+            galleryItem.style.transform = 'scale(0.8)';
+            
+            galleryItem.innerHTML = `
+                <img src="${imageData.src}" alt="${imageData.alt}" loading="lazy">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            `;
+            
+            galleryGrid.appendChild(galleryItem);
+            
+            setTimeout(() => {
+                galleryItem.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+                galleryItem.style.opacity = '1';
+                galleryItem.style.transform = 'scale(1)';
+            }, index * 80);
+            
+            const img = galleryItem.querySelector('img');
+            galleryItem.addEventListener('click', () => {
+                updateImagesList();
+                currentIndex = allImages.indexOf(img);
+                openLightbox(img.src);
+            });
+        });
+        
+        updateImagesList();
+    }
+    
+    function updateImagesList() {
+        allImages = Array.from(document.querySelectorAll('.gallery-item img'));
+    }
+    
+    updateImagesList();
+    
+    document.querySelectorAll('.gallery-item').forEach((item) => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            currentIndex = allImages.indexOf(img);
+            openLightbox(img.src);
+        });
+    });
+
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+    
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    }
+    
+    if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+            lightboxImg.src = allImages[currentIndex].src;
+        });
+    }
+
+    if (lightboxNext) {
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % allImages.length;
+            lightboxImg.src = allImages[currentIndex].src;
+        });
+    }
+    
+    document.addEventListener('keydown', (e) => {
+        if (lightbox && lightbox.classList.contains('active')) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                lightboxPrev.click();
+            } else if (e.key === 'ArrowRight') {
+                lightboxNext.click();
+            }
+        }
+    });
+    
+    function openLightbox(src) {
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 50);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    document.querySelectorAll('.gallery-item').forEach((item) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'all 0.5s ease';
+        observer.observe(item);
+    });
+});
