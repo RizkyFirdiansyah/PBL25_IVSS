@@ -1,0 +1,146 @@
+/* ===       FILE: sarana-prasarana.css  === */
+.page-banner.sarana-prasarana-banner {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+    url(/assets/gambar/gedungJTI.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 65px;
+  padding: 120px 50px 80px;
+  text-align: center;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sarana-prasarana-banner .banner-title {
+  color: #fff;
+  font-size: 56px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.sarana-prasarana-banner .banner-description {
+  color: #ccc;
+  max-width: 50%;
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.sarana-prasarana-content {
+  padding: 60px 50px;
+  background-color: #f8f8f8;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 0;
+}
+
+.grid-item {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.item-image {
+  width: 100%;
+  height: 230px;
+  background-color: #ddd;
+  overflow: hidden;
+
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.grid-item:hover .item-image img {
+  transform: scale(1.05);
+}
+
+.item-info {
+  padding: 25px;
+}
+
+.item-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.item-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+.load-more-btn {
+  display: block;
+  margin: 40px auto 0;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 2px solid #0b3fa8;
+  background-color: transparent;
+  color: #0b3fa8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.load-more-btn:hover {
+  background-color: #0b3fa8;
+  color: white;
+}
+
+.item-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid #0b3fa8;
+    border-radius: 25px;
+    color: #0b3fa8;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.item-button:hover {
+    background-color: #0b3fa8;
+    color: white;
+}
+
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 600px) {y
+  .grid-container {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+}
