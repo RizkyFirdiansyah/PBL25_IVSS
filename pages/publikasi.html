@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publikasi - IVSS Laboratory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<style>
+    /* HERO SECTION */
+    .hero-berita {
+        text-align: center;
+        padding: 150px 50px 100px;
+        margin-top: 65px;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+        url('/assets/gambar/gedungJTI.webp') center/cover no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-top: 65px;
+        padding: 120px 50px 80px;
+        text-align: center;
+        min-height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .hero-berita h1 {
+        font-size: 64px;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+
+    .hero-berita p {
+        color: #ffffff;
+        line-height: 1.6;
+        font-size: 16px;
+    }
+
+    /* SEARCH BAR */
+    .publikasi-search {
+        background: #fff;
+        padding: 20px 50px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .search-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        max-width: 900px;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .search-container input[type="text"] {
+        flex: 2;
+        padding: 12px 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .search-container input[type="number"] {
+        padding: 12px 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 120px; 
+    }
+
+    .search-container button {
+        padding: 12px 30px;
+        background-color: #1A2C9E; 
+        color: white; 
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .search-container button:hover {
+        background-color: #222;
+    }
+
+    .search-container i {
+        color: #999;
+        font-size: 18px;
+        margin-right: 10px;
+    }
+
+    /* ACCORDION */
+    .publikasi-list {
+        padding: 0px 50px;
+        background-color: #fff;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .accordion-item {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .accordion{
+        margin: 20px 20px 50px;
+
+    }
+
+    .accordion-header {
+        width: 100%;
+        background: none;
+        border: none;
+        text-align: left;
+        padding: 20px 0;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #000a64;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .accordion-header::after {
+        content: "+";
+        position: absolute;
+        right: 0;
+        top: 20px;
+        font-size: 18px;
+        transition: transform 0.3s;
+    }
+
+    .accordion-item.active .accordion-header::after {
+        content: "-";
+    }
+
+    .accordion-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        color: #444;
+        line-height: 1.6;
+        font-size: 14px;
+        padding-right: 25px;
+    }
+
+    .accordion-body .tahun{
+        font-weight: 700;
+        padding: 10px 20px;
+        width: max-content;
+        background-color: #1A2C9E;
+        color: #fff;
+        border-radius: 4px;
+        margin-bottom: 12px;
+    }
+
+    .accordion-item.active .accordion-body {
+        max-height: 150px;
+        padding-bottom: 20px;
+    }
+@media (max-width: 768px) {
+    .hero-berita h1 {
+        font-size: 48px;
+    }
+
+    .search-container {
+        display: flex;
+        justify-content: space-between;  /* Distribute items to the left and right */
+        align-items: center;
+        width: 100%;  /* Ensure it takes full width */
+        gap: 10px;
+    }
+
+    .search-container input[type="text"] {
+        width: 70%;  /* Search input takes 70% of the container's width */
+        box-sizing: border-box;
+    }
+
+    .search-container input[type="number"] {
+        width: 25%;  /* Year input takes 25% of the container's width */
+        box-sizing: border-box;
+    }
+
+    .search-container button {
+        display: none;  /* Hide the button on mobile */
+    }
+
+    .search-container input {
+        display: block;
+        width: 100%;
+    }
+}
+</style>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <section class="hero-berita reveal">
+        <div class="hero-content">
+            <h1>PUBLIKASI</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
+                pulvinar dapibus leo.</p>
+        </div>
+    </section>
+
+    <!-- SEARCH BAR -->
+    <section class="publikasi-search">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Cari..." onkeydown="if(event.key === 'Enter'){searchContent()}"/>
+            
+            <input type="number" id="yearInput" placeholder="Pilih Tahun" onkeydown="if(event.key === 'Enter'){filterByYear()}"/>
+
+            <button onclick="filterByYear()">Cari</button>
+        </div>
+    </section>
+
+    <!-- ACCORDION LIST -->
+    <section class="publikasi-list">
+        <div class="accordion">
+            <div class="accordion-item" data-year="2025">
+                <button class="accordion-header">Lorem Ipsum Dolor Sit Amet, Consectetur</button>
+                <div class="accordion-body">
+                    <p class="tahun">2025</p>
+                    <p>Penelitian ini membahas tentang penerapan deep learning dalam pengenalan pola pada sistem deteksi objek otomatis.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item" data-year="2024">
+                <button class="accordion-header">Lorem Ipsum Dolor Sit Amet, Consectetur</button>
+                <div class="accordion-body">
+                    <p class="tahun">2024</p>
+                    <p>Publikasi terkait sistem keamanan berbasis kecerdasan buatan di lingkungan industri.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item" data-year="2023">
+                <button class="accordion-header">Lorem Ipsum Dolor Sit Amet, Consectetur</button>
+                <div class="accordion-body">
+                    <p class="tahun">2023</p>
+                    <p>Analisis performa jaringan saraf tiruan untuk klasifikasi data citra medis.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item" data-year="2022">
+                <button class="accordion-header">Lorem Ipsum Dolor Sit Amet, Consectetur</button>
+                <div class="accordion-body">
+                    <p class="tahun">2022</p>
+                    <p>Studi penerapan Internet of Things (IoT) untuk pemantauan kualitas udara.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item" data-year="2021">
+                <button class="accordion-header">Lorem Ipsum Dolor Sit Amet, Consectetur</button>
+                <div class="accordion-body">
+                    <p class="tahun">2021</p>
+                    <p>Penelitian gabungan antara mahasiswa dan dosen dalam pengembangan sistem smart home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+        // Filter accordion items by year
+        function filterByYear() {
+            const year = document.getElementById('yearInput').value;
+            const accordionItems = document.querySelectorAll('.accordion-item');
+
+            accordionItems.forEach(item => {
+                const itemYear = item.getAttribute('data-year');
+                if (year && itemYear !== year) {
+                    item.style.display = 'none'; 
+                } else {
+                    item.style.display = 'block'; 
+                }
+            });
+        }
+
+        // Function for searching by text
+        function searchContent() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const accordionItems = document.querySelectorAll('.accordion-item');
+
+            accordionItems.forEach(item => {
+                const headerText = item.querySelector('.accordion-header').textContent.toLowerCase();
+                if (headerText.includes(searchTerm)) {
+                    item.style.display = 'block'; // Show items that match the search term
+                } else {
+                    item.style.display = 'none'; // Hide items that don't match the search term
+                }
+            });
+        }
+
+        // Accordion functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const accordionItem = header.parentElement;
+                    const accordionBody = accordionItem.querySelector('.accordion-body');
+
+                    // Toggle the active class to expand/collapse the item
+                    accordionItem.classList.toggle('active');
+
+                    // Control the visibility of the accordion body
+                    if (accordionItem.classList.contains('active')) {
+                        accordionBody.style.maxHeight = accordionBody.scrollHeight + 'px';
+                    } else {
+                        accordionBody.style.maxHeight = '0';
+                    }
+
+                    // Optionally, close other items
+                    const allAccordionItems = document.querySelectorAll('.accordion-item');
+                    allAccordionItems.forEach(item => {
+                        if (item !== accordionItem) {
+                            item.classList.remove('active');
+                            item.querySelector('.accordion-body').style.maxHeight = '0';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
