@@ -1,0 +1,430 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,700&display=swap");
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    max-width: 1444px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero-pd {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../gambar/gedungJTI.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 65px;
+    padding: 120px 50px 80px;
+    text-align: center;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-pd .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-pd h1 {
+    color: white;
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-pd p {
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.back-link-container {
+    position: fixed;
+    top: 85px;
+    left: 20px;
+    z-index: 9999;
+}
+
+.back-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.back-link:hover {
+    background-color: #000a64b9;
+    transform: scale(1.05);
+}
+
+.news-status {
+    display: inline-block;
+    padding: 4px 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.news-status.ongoing {
+    background: #ffe29b;
+    color: #7a5a00;
+}
+
+.news-status.finished {
+    background: #c4f5c2;
+    color: #1e7a28;
+}
+
+.detail-image-full {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.detail-image-full img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.detail-content-split {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.detail-text {
+    width: 65%;
+}
+
+.detail-card {
+    width: 35%;
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.detail-item {
+    margin-bottom: 20px;
+}
+
+.detail-item .label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.value.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.detail-item .value.tags .tag {
+    display: inline-block;
+    background: #f1f1f1;
+    padding: 5px 12px;
+    border-radius: 8px;
+    margin-right: 6px;
+    font-size: 0.85rem;
+}
+
+.value.ongoing {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.value.finished {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.penelitian-detail-section {
+  padding: 80px 50px;
+  background-color: white;
+}
+
+
+.penelitian-container {
+    background: #fff;
+    padding: 80px 50px;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    max-width: 1250px;
+    margin: 50px auto;
+}
+
+.related-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.related-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.related-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    color: #333;
+    transition: 0.25s;
+}
+
+.related-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.related-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.related-info {
+    padding: 18px 20px;
+}
+
+.related-info h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.related-info p {
+    font-size: 14px;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+.related-divider {
+    border: none;
+    border-top: 2px solid #e5e7eb;
+    margin: 50px 0 25px;
+}
+
+.related-info {
+    padding: 15px;
+}
+
+.related-date {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.related-status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.related-status.ongoing {
+    background: #f59e0b;
+}
+
+.related-status.completed {
+    background: #10b981;
+}
+
+.related-tags {
+    margin-bottom: 12px;
+}
+
+.related-tags .tag {
+    background: #e5e7eb;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 6px;
+    color: #333;
+}
+
+/* (iPad Air/Mini, Maks 1024px) */
+@media (min-width: 750px) and (max-width: 1024px) {
+    .penelitian-detail-section {
+        padding: 60px 30px;
+    }
+
+    .penelitian-container {
+        padding: 40px 30px;
+        margin: 30px auto;
+    }
+
+    .detail-text h2 {
+        font-size: 28px;
+    }
+
+    .detail-content-split {
+        grid-template-columns: 3fr 2fr;
+        gap: 25px;
+    }
+
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .related-card img {
+        height: 180px;
+    }
+
+    .back-link-container {
+        top: 115px;
+        left: 10px;
+    }
+}
+
+/* --- Media Query untuk Mobile --- */
+@media (max-width: 750px) {
+    .penelitian-detail-section {
+        padding: 60px 30px;
+    }
+
+    .penelitian-container {
+        padding: 30px 20px;
+        margin: 20px auto;
+        border-radius: 8px;
+        box-shadow: none;
+    }
+
+    .detail-text h2 {
+        font-size: 24px;
+    }
+
+    .detail-image-full img {
+        max-height: 250px;
+    }
+
+    .detail-content-split {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .related-title {
+        font-size: 24px;
+    }
+
+    .related-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .related-card img {
+        height: 200px;
+    }
+
+    .back-link-container {
+        top: 78px;
+        left: 10px;
+    }
+
+}
+
+/* Ukuran sangat kecil - shei */
+@media (max-width: 480px) {
+
+    .penelitian-detail-section {
+        padding: 40px 10px;
+    }
+
+    .penelitian-container {
+        padding: 20px 10px;
+        margin: 15px auto;
+    }
+
+    .detail-card {
+        padding: 15px;
+    }
+
+    .detail-text p {
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+
+    .related-container {
+        padding: 0 10px;
+    }
+
+    .related-title {
+        font-size: 22px;
+    }
+
+    .related-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .back-link-container {
+        left: 5px;
+    }
+
+    .back-link {
+        width: 35px;
+        height: 35px;
+        font-size: 1.1em;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}

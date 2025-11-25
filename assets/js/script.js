@@ -1,11 +1,11 @@
-fetch('navbar.html')
+fetch('../utils/navbar.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
-        
+
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
-        
+
         if (hamburger && navMenu) {
             hamburger.addEventListener('click', () => {
                 hamburger.classList.toggle('active');
@@ -22,7 +22,7 @@ fetch('navbar.html')
 
         const dropdownToggle = document.querySelector('.dropdown-toggle');
         const dropdown = document.querySelector('.dropdown');
-        
+
         if (dropdownToggle && dropdown) {
             dropdownToggle.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
@@ -36,11 +36,11 @@ fetch('navbar.html')
     })
     .catch(error => console.error('Error loading navbar:', error));
 
-fetch('footer.html')
+fetch('../utils/footer.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('footer-placeholder').innerHTML = data;
-        
+
         const newsletterForm = document.querySelector('.newsletter-form');
         if (newsletterForm) {
             newsletterForm.addEventListener('submit', (e) => {
@@ -56,7 +56,7 @@ fetch('footer.html')
 function setActiveMenu() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-menu li a');
-    
+
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (href === currentPage || (currentPage === '' && href === 'index.html')) {
@@ -89,20 +89,20 @@ function initializeSlider() {
     const nextBtn = document.getElementById('nextBtn');
     const counter = document.getElementById('sliderCounter');
     const galleryBtn = document.getElementById('sliderGalleryBtn');
-    
+
     if (!slider || !prevBtn || !nextBtn) return;
-    
-    const slideWidth = 270; 
+
+    const slideWidth = 270;
     let currentPosition = 0;
-    
+
     function updateCounter() {
         const maxScroll = slider.scrollWidth - slider.clientWidth;
         const scrollPercentage = Math.round((slider.scrollLeft / maxScroll) * 100);
-        
+
         if (counter) {
             counter.textContent = `Scroll: ${scrollPercentage}%`;
         }
-        
+
         if (galleryBtn) {
             if (scrollPercentage >= 80) {
                 galleryBtn.classList.add('show');
@@ -110,11 +110,11 @@ function initializeSlider() {
                 galleryBtn.classList.remove('show');
             }
         }
-        
+
         prevBtn.disabled = slider.scrollLeft <= 0;
         nextBtn.disabled = slider.scrollLeft >= maxScroll - 10;
     }
-    
+
     prevBtn.addEventListener('click', () => {
         slider.scrollBy({
             left: -slideWidth * 3,
@@ -122,7 +122,7 @@ function initializeSlider() {
         });
         setTimeout(updateCounter, 300);
     });
-    
+
     nextBtn.addEventListener('click', () => {
         slider.scrollBy({
             left: slideWidth * 3,
@@ -130,11 +130,11 @@ function initializeSlider() {
         });
         setTimeout(updateCounter, 300);
     });
-    
+
     slider.addEventListener('scroll', updateCounter);
 
     updateCounter();
-    
+
     slider.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
             prevBtn.click();
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = item.querySelector('h3').textContent.toLowerCase();
             const content = item.querySelector('p').textContent.toLowerCase();
             const date = item.querySelector('.news-date').textContent;
-            
+
             const matchesSearch = title.includes(searchTerm) || content.includes(searchTerm);
             const matchesYear = selectedYear === '' || date.includes(selectedYear);
 
@@ -204,28 +204,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const pageLinks = document.querySelectorAll('.page-link:not(.prev):not(.next)');
-    
+
     pageLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            
+
             pageLinks.forEach(l => l.classList.remove('active'));
-            
+
             link.classList.add('active');
-            
+
             scrollToNewsSection();
         });
     });
 
     const prevBtn = document.querySelector('.page-link.prev');
     const nextBtn = document.querySelector('.page-link.next');
-    
+
     if (prevBtn) {
         prevBtn.addEventListener('click', (e) => {
             e.preventDefault();
             const currentActive = document.querySelector('.page-link.active');
             const prevPage = currentActive.previousElementSibling;
-            
+
             if (prevPage && !prevPage.classList.contains('prev')) {
                 pageLinks.forEach(l => l.classList.remove('active'));
                 prevPage.classList.add('active');
@@ -233,13 +233,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
     if (nextBtn) {
         nextBtn.addEventListener('click', (e) => {
             e.preventDefault();
             const currentActive = document.querySelector('.page-link.active');
             const nextPage = currentActive.nextElementSibling;
-            
+
             if (nextPage && !nextPage.classList.contains('page-dots') && !nextPage.classList.contains('next')) {
                 pageLinks.forEach(l => l.classList.remove('active'));
                 nextPage.classList.add('active');
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function scrollToNewsSection() {
         const newsSection = document.querySelector('.news-list-section');
         if (newsSection) {
-            const offset = 80; 
+            const offset = 80;
             const elementPosition = newsSection.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -290,10 +290,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const tagGroups = document.querySelectorAll('.news-tags');
+    const tagGroups = document.querySelectorAll('.news-tags, .penelitian-tags');
 
     tagGroups.forEach(group => {
-        const tags = group.querySelectorAll('.news-tag');
+        const isPenelitian = group.classList.contains('penelitian-tags');
+        const tags = group.querySelectorAll(isPenelitian ? '.penelitian-tag' : '.news-tag');
         const maxVisible = 2;
 
         if (tags.length > maxVisible) {
@@ -302,12 +303,14 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             const moreTag = document.createElement('span');
-            moreTag.classList.add('news-tag', 'more');
+            moreTag.classList.add('more');
+            moreTag.classList.add(isPenelitian ? 'penelitian-tag' : 'news-tag');
             moreTag.textContent = `+${tags.length - maxVisible}`;
             group.appendChild(moreTag);
         }
     });
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll(".grid-item");
@@ -326,65 +329,65 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const sections = document.querySelectorAll('.member-section');
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll('.member-section');
 
-        sections.forEach(section => {
-            const grid = section.querySelector('.member-grid');
-            if (!grid) return;
+    sections.forEach(section => {
+        const grid = section.querySelector('.member-grid');
+        if (!grid) return;
 
-            const cards = grid.querySelectorAll('.member-card');
-            const limit = 8;
+        const cards = grid.querySelectorAll('.member-card');
+        const limit = 8;
 
-            if (cards.length > limit) {
-                
+        if (cards.length > limit) {
 
-                const hiddenCards = []; 
-                for (let i = limit; i < cards.length; i++) {
-                    cards[i].classList.add('hidden');
-                    hiddenCards.push(cards[i]);
-                }
-                const btnContainer = document.createElement('div');
-                btnContainer.className = 'load-more-container';
-                
-                btnContainer.innerHTML = `
+
+            const hiddenCards = [];
+            for (let i = limit; i < cards.length; i++) {
+                cards[i].classList.add('hidden');
+                hiddenCards.push(cards[i]);
+            }
+            const btnContainer = document.createElement('div');
+            btnContainer.className = 'load-more-container';
+
+            btnContainer.innerHTML = `
                     <button class="btn-load-more" data-state="closed">
                         <span class="btn-text">Lihat Selanjutnya</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
                 `;
 
-                section.querySelector('.container').appendChild(btnContainer);
+            section.querySelector('.container').appendChild(btnContainer);
 
-                const btn = btnContainer.querySelector('.btn-load-more');
-                const btnText = btn.querySelector('.btn-text');
-                const btnIcon = btn.querySelector('i');
+            const btn = btnContainer.querySelector('.btn-load-more');
+            const btnText = btn.querySelector('.btn-text');
+            const btnIcon = btn.querySelector('i');
 
-                btn.addEventListener('click', function() {
-                    const currentState = btn.getAttribute('data-state');
+            btn.addEventListener('click', function () {
+                const currentState = btn.getAttribute('data-state');
 
-                    if (currentState === 'closed') {
-            
-                        hiddenCards.forEach(card => card.classList.remove('hidden'));
-                        
-                        btnText.textContent = "Sembunyikan";
-                        btnIcon.classList.remove('fa-chevron-down');
-                        btnIcon.classList.add('fa-chevron-up');
-                        btn.setAttribute('data-state', 'open');
+                if (currentState === 'closed') {
 
-                    } else {
-                        hiddenCards.forEach(card => card.classList.add('hidden'));
-                        btnText.textContent = "Lihat Selanjutnya";
-                        btnIcon.classList.remove('fa-chevron-up');
-                        btnIcon.classList.add('fa-chevron-down');
+                    hiddenCards.forEach(card => card.classList.remove('hidden'));
 
-                        btn.setAttribute('data-state', 'closed');
+                    btnText.textContent = "Sembunyikan";
+                    btnIcon.classList.remove('fa-chevron-down');
+                    btnIcon.classList.add('fa-chevron-up');
+                    btn.setAttribute('data-state', 'open');
 
-                    }
-                });
-            }
-        });
+                } else {
+                    hiddenCards.forEach(card => card.classList.add('hidden'));
+                    btnText.textContent = "Lihat Selanjutnya";
+                    btnIcon.classList.remove('fa-chevron-up');
+                    btnIcon.classList.add('fa-chevron-down');
+
+                    btn.setAttribute('data-state', 'closed');
+
+                }
+            });
+        }
     });
+});
 // tambahan js untuk gallery 
 document.addEventListener('DOMContentLoaded', () => {
     const lightbox = document.getElementById('lightbox');
@@ -395,27 +398,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryGrid = document.getElementById('galleryGrid');
     const loadMoreBtn = document.getElementById('loadMoreBtn');
     const loadMoreContainer = document.getElementById('loadMoreContainer');
-    
+
     let currentIndex = 0;
     let allImages = [];
-    
+
     // tambahkan foto-foto lainnya di sini
     const additionalImages = [
         { src: '../assets/gambar/rs.jpg', alt: 'Research Space' },
+        { src: '../assets/gambar/stopContact.jpeg', alt: 'Stop Kontak' },
+        { src: '../assets/gambar/rak2.jpeg', alt: 'Rak' },
     ];
-    
+
     let imagesLoaded = false;
-    
+
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', () => {
             if (!imagesLoaded && additionalImages.length > 0) {
                 loadMoreImages();
                 imagesLoaded = true;
-                
+
                 loadMoreBtn.querySelector('.btn-text').textContent = 'Semua Foto Dimuat';
                 loadMoreBtn.querySelector('i').className = 'fas fa-check';
                 loadMoreBtn.disabled = true;
-                
+
                 setTimeout(() => {
                     loadMoreContainer.classList.add('hidden');
                 }, 2000);
@@ -424,33 +429,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
     if (additionalImages.length === 0 && loadMoreContainer) {
         loadMoreContainer.classList.add('hidden');
     }
-    
+
     function loadMoreImages() {
         additionalImages.forEach((imageData, index) => {
             const galleryItem = document.createElement('div');
             galleryItem.className = 'gallery-item';
             galleryItem.style.opacity = '0';
             galleryItem.style.transform = 'scale(0.8)';
-            
+
             galleryItem.innerHTML = `
                 <img src="${imageData.src}" alt="${imageData.alt}" loading="lazy">
                 <div class="gallery-overlay">
                     <i class="fas fa-search-plus"></i>
                 </div>
             `;
-            
+
             galleryGrid.appendChild(galleryItem);
-            
+
             setTimeout(() => {
                 galleryItem.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
                 galleryItem.style.opacity = '1';
                 galleryItem.style.transform = 'scale(1)';
             }, index * 80);
-            
+
             const img = galleryItem.querySelector('img');
             galleryItem.addEventListener('click', () => {
                 updateImagesList();
@@ -458,16 +463,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 openLightbox(img.src);
             });
         });
-        
+
         updateImagesList();
     }
-    
+
     function updateImagesList() {
         allImages = Array.from(document.querySelectorAll('.gallery-item img'));
     }
-    
+
     updateImagesList();
-    
+
     document.querySelectorAll('.gallery-item').forEach((item) => {
         item.addEventListener('click', () => {
             const img = item.querySelector('img');
@@ -479,7 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lightboxClose) {
         lightboxClose.addEventListener('click', closeLightbox);
     }
-    
+
     if (lightbox) {
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
@@ -487,7 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
     if (lightboxPrev) {
         lightboxPrev.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -503,7 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lightboxImg.src = allImages[currentIndex].src;
         });
     }
-    
+
     document.addEventListener('keydown', (e) => {
         if (lightbox && lightbox.classList.contains('active')) {
             if (e.key === 'Escape') {
@@ -515,23 +520,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-    
+
     function openLightbox(src) {
         lightboxImg.src = src;
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
-    
+
     function closeLightbox() {
         lightbox.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
-    
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
@@ -543,7 +548,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, observerOptions);
-    
+
     document.querySelectorAll('.gallery-item').forEach((item) => {
         item.style.opacity = '0';
         item.style.transform = 'translateY(20px)';

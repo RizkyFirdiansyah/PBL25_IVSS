@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,700&display=swap");
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    max-width: 1444px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero-publikasi {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(/assets/gambar/gedungJTI.webp) center / cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 65px;
+    padding: 120px 50px 80px;
+    text-align: center;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-publikasi .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-publikasi h1 {
+    color: white;
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-publikasi p {
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.publikasi-search {
+    background: #fff;
+    padding: 20px 50px;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.search-container input[type="text"] {
+    flex: 2;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-container input[type="number"] {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 120px;
+}
+
+.search-container button {
+    padding: 12px 30px;
+    background-color: #1A2C9E;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #222;
+}
+
+.search-container i {
+    color: #999;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.year-filter-pub {
+    padding: 12px 30px;
+    background-color: #1A2C9E;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+}
+
+.year-filter-pub :focus {
+    outline: none;
+}
+
+/* ACCORDION */
+.publikasi-list {
+    padding: 0px 50px;
+    background-color: #fff;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion {
+    margin: 20px 20px 50px;
+
+}
+
+.accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 20px 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000a64;
+    cursor: pointer;
+    position: relative;
+}
+
+.accordion-header::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 20px;
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+
+.accordion-item.active .accordion-header::after {
+    content: "-";
+}
+
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    color: #444;
+    line-height: 1.6;
+    font-size: 14px;
+    padding-right: 25px;
+}
+
+.accordion-body .tahun {
+    font-weight: 700;
+    padding: 10px 20px;
+    width: max-content;
+    background-color: #1A2C9E;
+    color: #fff;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.accordion-item.active .accordion-body {
+    max-height: 150px;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .hero-berita h1 {
+        font-size: 48px;
+    }
+
+    .search-container {
+        display: flex;
+        justify-content: space-between;
+        /* Distribute items to the left and right */
+        align-items: center;
+        width: 100%;
+        /* Ensure it takes full width */
+        gap: 10px;
+    }
+
+    .search-container input[type="text"] {
+        width: 70%;
+        /* Search input takes 70% of the container's width */
+        box-sizing: border-box;
+    }
+
+    .search-container input[type="number"] {
+        width: 25%;
+        /* Year input takes 25% of the container's width */
+        box-sizing: border-box;
+    }
+
+    .search-container button {
+        display: none;
+        /* Hide the button on mobile */
+    }
+
+    .search-container input {
+        display: block;
+        width: 100%;
+    }
+}
