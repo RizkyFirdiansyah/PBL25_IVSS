@@ -1,31 +1,30 @@
 .page-banner.member-banner {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(/assets/gambar/gedungJTI.webp);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(/assets/gambar/gedungJTI.webp) center / cover no-repeat;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 65px;
   padding: 120px 50px 80px;
   text-align: center;
-  min-height: 40vh;
+  height: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .member-banner .banner-title {
-  color: #fff;
+  color: white;
   font-size: 56px;
-  margin-bottom: 20px;
   font-weight: bold;
-  letter-spacing: 2px;
+  margin-bottom: 20px;
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 .member-banner .banner-description {
-  color: #ccc;
-  max-width: 50%;
+  color: #e0e0e0;
   font-size: 16px;
+  line-height: 1.8;
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.8;
 }
 .member-page-content {
   background-color: #fff;
