@@ -1,52 +1,75 @@
-/* ===       FILE: about-us.css          === */
 .page-banner {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(/assets/gambar/gedungJTI.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 65px;
-  padding: 120px 50px 80px;
+  padding: 120px 20px 80px; 
   text-align: center;
   min-height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
+
 .about-us-banner .banner-title {
-  color: #fff;
+  color: white;
   font-size: 56px;
-  margin-bottom: 20px;
   font-weight: bold;
-  letter-spacing: 2px;
+  margin: 0 0 20px 0;
   text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  max-width: 1200px; 
 }
+
 .about-us-banner .banner-description {
-  color: #ccc;
-  max-width: 50%;
+  color: #e0e0e0;
   font-size: 16px;
+  line-height: 1.8;
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.8;
 }
+
 .section-sejarah-about {
-  padding: 80px 50px;
+  padding: 80px 50px; 
   background-color: #fff;
 }
+
 .content-row {
   display: flex;
-  gap: 40px;
-  align-items: flex-start;
+  gap: 50px; 
+  align-items: stretch; 
+  max-width: 1200px; 
+  margin: 0 auto;     
+  width: 100%;
 }
-.image-placeholder {
-  background-color: #ccc;
-}
+
 .large-placeholder {
-  flex: 0.75;
-  min-height: 60vh;
+  flex: 1; 
+  min-width: 300px; 
+  background-color: #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  min-height: 450px; 
 }
+
+.large-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
 .text-content {
-  flex: 1;
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
 }
+
 .section-label {
   font-size: 0.8em;
   color: #999;
@@ -54,37 +77,47 @@
   margin-bottom: 20px;
   text-transform: uppercase;
 }
+
 .section-sejarah-about .text-content h2 {
   margin-bottom: 25px;
   font-size: 2em;
   line-height: 1.2;
 }
+
 .section-sejarah-about .text-content p {
   margin-bottom: 20px;
+  line-height: 1.6;
 }
+
 .section-visi-misi.vm-testimonial-style {
   padding: 80px 50px;
   background-color: #f8f8f8;
 }
+
 .section-label.text-center {
   text-align: center;
   color: #a098bf;
   font-weight: 600;
   margin-bottom: 5px;
 }
+
 .section-title.text-center {
   text-align: center;
   font-size: 2.5em;
   margin-bottom: 50px;
   color: #132145;
 }
+
 .vm-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  max-width: 1000px;
+  max-width: 1200px; 
   margin: 0 auto;
+  width: 100%;
+  align-items: start;
 }
+
 .vm-card {
   background-color: #fff;
   border-radius: 12px;
@@ -94,141 +127,108 @@
   flex-direction: column;
   overflow: hidden;
 }
-.vm-card .card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-.vm-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #e0ffe0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.2em;
-  margin-right: 15px;
-  flex-shrink: 0;
-}
-.vm-info {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
-.vm-info h3 {
-  margin: 0;
-  font-size: 1.6em;
-  color: #333;
-  font-weight: 700;
-}
+.vm-card .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.vm-icon { width: 60px; height: 60px; border-radius: 50%; background-color: #e0ffe0; display: flex; justify-content: center; align-items: center; font-size: 2.2em; margin-right: 15px; flex-shrink: 0; }
+.vm-info { flex-grow: 1; display: flex; align-items: center; justify-content: space-between; }
+.vm-info h3 { margin: 0; font-size: 1.6em; color: #333; font-weight: 700; }
+.vm-card .accordion-header { background: none; border: none; cursor: pointer; font-size: 1.2em; color: #555; padding: 5px; margin-left: 10px; }
+.vm-card .accordion-header i { transition: transform 0.3s ease; }
+.vm-card .accordion-header.active i { transform: rotate(180deg); }
+.vm-card .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding-top: 0; padding-bottom: 0; color: #555; line-height: 1.7; }
+.vm-card .accordion-header.active + .accordion-body { padding-top: 10px; }
+.vm-card .misi-list { padding-left: 20px; margin: 0; }
+.vm-card .misi-list li { margin-bottom: 8px; }
 
-.vm-card .accordion-header {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2em;
-  color: #555;
-  padding: 5px;
-  margin-left: 10px;
-}
-.vm-card .accordion-header i {
-  transition: transform 0.3s ease;
-}
-.vm-card .accordion-header.active i {
-  transform: rotate(180deg);
-}
-.vm-card .accordion-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-out;
-  padding-top: 0;
-  padding-bottom: 0;
-  color: #555;
-  line-height: 1.7;
-}
-.vm-card .accordion-header.active + .accordion-body {
-  padding-top: 10px;
-}
-.vm-card .misi-list {
-  padding-left: 20px;
-  margin: 0;
-}
-.vm-card .misi-list li {
-  margin-bottom: 8px;
-}
 .news-section {
   padding: 80px 50px;
   background-color: #fff;
 }
+
 .news-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   max-width: 1200px;
   margin: 40px auto 0;
+  width: 100%;
 }
+
 .news-card {
   padding: 20px;
   text-align: left;
   background-color: #fff;
   border-radius: 8px;
+  border: 1px solid #eee;
 }
+
 .news-card.highlight {
   background-color: #3b5998;
   color: #fff;
   border-radius: 8px;
   padding: 30px;
+  border: none;
 }
-.news-card.highlight h3 {
-  color: #fff;
-}
-.news-card .news-icon {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #3b5998;
-}
-.news-card.highlight .news-icon {
-  color: #fff;
-}
-.news-card h3 {
-  font-size: 1.4em;
-  margin-bottom: 15px;
-  color: #333;
-}
-.news-card p {
-  font-size: 1em;
-  line-height: 1.6;
-  color: #555;
-}
-.news-card.highlight p {
-  color: #eee;
-}
-@media (max-width: 768px) {
-  .section-sejarah-about,
-  .section-visi-misi.vm-testimonial-style,
-  .news-section {
-    padding: 60px 20px;
-  }
+
+.news-card.highlight h3 { color: #fff; }
+.news-card .news-icon { font-size: 2.5em; margin-bottom: 20px; color: #3b5998; }
+.news-card.highlight .news-icon { color: #fff; }
+.news-card h3 { font-size: 1.4em; margin-bottom: 15px; color: #333; }
+.news-card p { font-size: 1em; line-height: 1.6; color: #555; }
+.news-card.highlight p { color: #eee; }
+
+@media (max-width: 992px) {
   .content-row {
     flex-direction: column;
   }
   .large-placeholder {
-    min-height: 250px;
+    width: 100%;
+    min-height: 350px; 
     margin-bottom: 30px;
   }
+}
+
+@media (max-width: 768px) {
+  .page-banner {
+    min-height: 30vh;
+    padding: 100px 20px 60px;
+    margin-top: 60px;
+  }
+
+  .about-us-banner .banner-title {
+    font-size: 32px;
+  }
+  
+  .section-sejarah-about,
+  .section-visi-misi.vm-testimonial-style,
+  .news-section {
+    padding: 50px 20px;
+  }
+
+  .content-row {
+     display: block;/
+  }
+
+  .large-placeholder {
+    width: 100%;
+    min-height: 250px; 
+    height: auto; 
+    margin-bottom: 30px; 
+    display: block;
+  }
+
+  .large-placeholder img {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    display: block;
+  }
+
   .vm-grid {
     grid-template-columns: 1fr;
-    max-width: 500px;
   }
+
   .news-grid {
     grid-template-columns: 1fr;
-  }
-  .section-title.text-center {
-    font-size: 2em;
-    margin-bottom: 30px;
   }
 }

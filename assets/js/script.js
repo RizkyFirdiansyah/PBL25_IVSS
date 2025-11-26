@@ -326,65 +326,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const sections = document.querySelectorAll('.member-section');
-
-        sections.forEach(section => {
-            const grid = section.querySelector('.member-grid');
-            if (!grid) return;
-
-            const cards = grid.querySelectorAll('.member-card');
-            const limit = 8;
-
-            if (cards.length > limit) {
-                
-
-                const hiddenCards = []; 
-                for (let i = limit; i < cards.length; i++) {
-                    cards[i].classList.add('hidden');
-                    hiddenCards.push(cards[i]);
-                }
-                const btnContainer = document.createElement('div');
-                btnContainer.className = 'load-more-container';
-                
-                btnContainer.innerHTML = `
-                    <button class="btn-load-more" data-state="closed">
-                        <span class="btn-text">Lihat Selanjutnya</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                `;
-
-                section.querySelector('.container').appendChild(btnContainer);
-
-                const btn = btnContainer.querySelector('.btn-load-more');
-                const btnText = btn.querySelector('.btn-text');
-                const btnIcon = btn.querySelector('i');
-
-                btn.addEventListener('click', function() {
-                    const currentState = btn.getAttribute('data-state');
-
-                    if (currentState === 'closed') {
-            
-                        hiddenCards.forEach(card => card.classList.remove('hidden'));
-                        
-                        btnText.textContent = "Sembunyikan";
-                        btnIcon.classList.remove('fa-chevron-down');
-                        btnIcon.classList.add('fa-chevron-up');
-                        btn.setAttribute('data-state', 'open');
-
-                    } else {
-                        hiddenCards.forEach(card => card.classList.add('hidden'));
-                        btnText.textContent = "Lihat Selanjutnya";
-                        btnIcon.classList.remove('fa-chevron-up');
-                        btnIcon.classList.add('fa-chevron-down');
-
-                        btn.setAttribute('data-state', 'closed');
-
-                    }
-                });
-            }
-        });
-    });
 // tambahan js untuk gallery 
 document.addEventListener('DOMContentLoaded', () => {
     const lightbox = document.getElementById('lightbox');

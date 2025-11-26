@@ -1,55 +1,156 @@
+.hero-detail {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('../gambar/gedungJTI.webp');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-top: 65px; 
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 3em;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    color: #e0e0e0;
+    font-size: 1.1em;
+}
+
+.back-link-container {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.3s;
+}
+
+.back-link:hover {
+    opacity: 0.8;
+}
+
 .depa-layanan-content {
-  background-color: #f8f8f8;
-  padding: 60px 50px;
+    background-color: #f8f8f8;
+    padding: 60px 50px;
 }
 
 .depa-container-box {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-  padding: 40px;
-  margin-bottom: 60px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 50px;
+    max-width: 1100px; 
+    margin: 0 auto;   
 }
 
 .depa-section-top {
-  display: grid;
-  grid-template-columns: 35% 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 35% 1fr; 
+    gap: 50px;
+    margin-bottom: 40px;
+    align-items: center; 
 }
 
 .depa-visual {
-  background-color: #e0e0e0;
-  width: 100%;
-  min-height: 250px;
-  border-radius: 5px;
+    background-color: #e0e0e0;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .depa-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
 }
 
 .depa-text-intro h2 {
-  font-size: 2em;
-  font-weight: 800;
-  color: #333;
-  margin-bottom: 20px;
-  text-transform: uppercase;
+    font-size: 2.2em;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    line-height: 1.2;
 }
 
 .depa-text-intro p {
-  font-size: 0.95em;
-  line-height: 1.7;
-  color: #666;
-  margin-bottom: 15px;
+    font-size: 1em;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify;
 }
 
 .depa-section-bottom p {
-  font-size: 1em;
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 20px;
+    font-size: 1em;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+@media (max-width: 992px) {
+    .depa-section-top {
+        gap: 30px; 
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    .depa-layanan-content {
+        padding: 40px 20px;
+    }
+    
+    .depa-container-box {
+        padding: 30px;
+    }
+
+    .back-link-container {
+        top: 20px;
+        left: 20px;
+    }
+
+    .depa-section-top {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        align-items: start;
+    }
+
+    .depa-visual {
+        aspect-ratio: 4 / 3; 
+        width: 100%;
+    }
+
+    .depa-text-intro h2 {
+        font-size: 1.8em;
+        margin-top: 10px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2em;
+    }
 }
