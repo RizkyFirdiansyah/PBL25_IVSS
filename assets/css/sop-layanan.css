@@ -1,30 +1,66 @@
-.sop-banner {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('../gambar/gedungJTI.webp'); /* Ganti gambar jika perlu */
-    background-size: cover;
-    background-position: center;
-    min-height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 100px 20px;
-    margin-top: 65px;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,700&display=swap");
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 
-.sop-banner h1 {
-    color: white;
-    font-size: 48px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.sop-banner p {
-    color: #f0f0f0;
-    font-size: 16px;
-    max-width: 700px;
-    margin: 0 auto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  max-width: 1444px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page-banner.sop-layanan-banner {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(/assets/gambar/gedungJTI.webp) center / cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 65px;
+  padding: 120px 50px 80px;
+  text-align: center;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sop-layanan-banner .banner-title {
+  color: white;
+  font-size: 56px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.sop-layanan-banner .banner-description {
+  color: #e0e0e0;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .sop-info-section {
@@ -173,5 +209,11 @@
     
     .sop-header {
         padding: 20px 0;
+    }
+    .sop-section-bottom p {
+    font-size: 1em;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
     }
 }
