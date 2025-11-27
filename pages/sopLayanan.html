@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP & Layanan - Lab IVSS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/sop-layanan.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <header class="page-banner sop-banner reveal">
+        <div class="container">
+            <h1 class="banner-title">SOP & LAYANAN</h1>
+            <p class="banner-description">
+                Standar Operasional Prosedur dan layanan administrasi untuk praktikum dan penelitian di IVSS Laboratory.
+            </p>
+        </div>
+    </header>
+
+    <main class="sop-page-content">
+        
+        <section class="sop-info-section reveal">
+            <div class="container">
+                <div class="info-box">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Lokasi</h3>
+                            <p>Gedung Jurusan Teknologi Informasi — Lantai 8 Barat</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Surel</h3>
+                            <p>lab.ivss@polinema.ac.id</p> </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Jam Layanan</h3>
+                            <p>Senin — Jumat (08.00 — 16.00)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sop-list-section reveal">
+            <div class="container">
+                <div class="accordion-container">
+
+                    <div class="sop-item">
+                        <div class="sop-header" onclick="toggleSop(this)">
+                            <h3 class="sop-title">SOP PRAKTIKUM</h3>
+                            <span class="sop-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="sop-body">
+                            <div class="sop-content">
+                                <p>Berikut adalah prosedur standar untuk pelaksanaan praktikum di laboratorium IVSS. Mahasiswa wajib membaca dan memahami aturan ini sebelum memasuki ruangan lab.</p>
+                                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Unduh Dokumen SOP</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sop-item">
+                        <div class="sop-header" onclick="toggleSop(this)">
+                            <h3 class="sop-title">FORM PERMOHONAN LAYANAN</h3>
+                            <span class="sop-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="sop-body">
+                            <div class="sop-content">
+                                <p>Gunakan formulir ini untuk mengajukan permohonan penggunaan alat, peminjaman ruang, atau layanan riset lainnya.</p>
+                                <a href="#" class="btn-download"><i class="fas fa-file-alt"></i> Unduh Formulir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sop-item">
+                        <div class="sop-header" onclick="toggleSop(this)">
+                            <h3 class="sop-title">TATA TERTIB LABORATORIUM</h3>
+                            <span class="sop-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="sop-body">
+                            <div class="sop-content">
+                                <p>Aturan kedisiplinan, berpakaian, dan keselamatan kerja (K3) yang berlaku bagi seluruh pengguna laboratorium.</p>
+                                <a href="#" class="btn-download"><i class="fas fa-download"></i> Unduh Tata Tertib</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/script.js"></script>
+    
+    <script>
+        function toggleSop(header) {
+            const item = header.parentElement;
+            
+            item.classList.toggle('active');
+
+            const body = item.querySelector('.sop-body');
+            if (body.style.maxHeight) {
+                body.style.maxHeight = null; 
+            } else {
+                body.style.maxHeight = body.scrollHeight + "px"; 
+            }
+        }
+    </script>
+
+</body>
+</html>

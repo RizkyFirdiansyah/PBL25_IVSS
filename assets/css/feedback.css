@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,700&display=swap");
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    max-width: 1444px;
+    width: 100%;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.hero-kontak {
+    position: relative;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.3)),
+        url(/assets/gambar/gedungJTI.webp) center / cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 65px;
+    padding: 120px 50px 80px;
+    height: 380px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-kontak .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.hero-kontak h1 {
+    color: #ffffff;
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+.hero-kontak p {
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-section {
+    background-color: #f4f7f6;
+    padding: 80px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 60vh;
+}
+
+.contact-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contact-form-box {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(6, 21, 56, 0.15);
+}
+
+.form-label {
+    font-size: 0.8em;
+    color: #999;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.form-title {
+    font-size: 2.2em;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+    text-align: left;
+}
+
+.required {
+    color: #d9534f;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: #f4f7f6;
+    font-size: 1em;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #0056b3;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.1);
+}
+
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.form-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 25px;
+    width: 100%;
+    gap: 20px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95em;
+    color: #777;
+    width: 100%;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: #0056b3;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.contact-form button,
+.btn-submit {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-right: auto;
+}
+
+.contact-form button:hover,
+.btn-submit:hover {
+    background-color: #031676;
+    transform: translateY(-2px);
+}
+
+.contact-form button:active,
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* Tablet Devices */
+@media (max-width: 992px) {
+    .hero-kontak {
+        height: auto;
+        min-height: 320px;
+        padding: 100px 30px 60px;
+    }
+
+    .hero-kontak h1 {
+        font-size: 48px;
+    }
+
+    .hero-kontak p {
+        font-size: 15px;
+    }
+
+    .contact-section {
+        padding: 60px 30px;
+    }
+
+    .contact-form-box {
+        padding: 40px 30px;
+        width: 90%;
+    }
+
+    .form-title {
+        font-size: 2em;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .hero-kontak {
+        margin-top: 60px;
+        padding: 80px 30px 60px;
+    }
+
+    .hero-kontak h1 {
+        font-size: 40px;
+        margin-bottom: 16px;
+    }
+
+    .hero-kontak p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .contact-section {
+        padding: 50px 20px;
+    }
+
+    .contact-form-box {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .form-title {
+        font-size: 1.8em;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 600px) {
+    .hero-kontak {
+        height: auto;
+        min-height: 280px;
+        padding: 70px 20px 50px;
+    }
+
+    .hero-kontak h1 {
+        font-size: 32px;
+        letter-spacing: 1px;
+    }
+
+    .hero-kontak p {
+        font-size: 13px;
+    }
+
+    .contact-section {
+        padding: 40px 0;
+        background-color: #fff;
+    }
+
+    .contact-form-box {
+        width: 100%;
+        padding: 30px 20px;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: #fff;
+    }
+
+    .form-title {
+        font-size: 1.6em;
+    }
+
+    .form-label {
+        font-size: 0.75em;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+
+    .form-footer {
+        gap: 15px;
+    }
+
+    .contact-form button,
+    .btn-submit {
+        width: 100%;
+        padding: 14px 20px;
+    }
+}
