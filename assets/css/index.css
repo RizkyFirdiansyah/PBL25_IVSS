@@ -40,11 +40,15 @@ body {
     padding: 100px 50px 50px;
     text-align: left;
     min-height: 100vh;
+    display: flex;
+    /* align-items: center; */
     min-height: 100svh
 }
 
 .hero-content {
     max-width: 800px;
+    height: 100% ;
+    /* margin: auto 0; */
 }
 
 .hero-subtitle {

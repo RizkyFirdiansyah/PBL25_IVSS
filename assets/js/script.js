@@ -262,10 +262,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const contactBtn = document.querySelector('.btn-contact');
+    const contactBtn = document.querySelector('.btn-feedback');
     if (contactBtn) {
         contactBtn.addEventListener('click', () => {
-            window.location.href = 'contact.html';
+            window.location.href = 'feedback.html';
         });
     }
 
